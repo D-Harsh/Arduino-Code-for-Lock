@@ -1,2 +1,3 @@
 # Arduino-Code-for-Lock
-4 digit lock on arduino
+The Comp Eng Project we had to hard code
+It's gonna be lit... or locked whichever
