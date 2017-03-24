@@ -9,7 +9,9 @@ Servo servo;
 int angle = 0;
 //check pin before starting
 int RECV_PIN = 10;
-char lockCode[4];
+int lockcode[] = {1,2,3,4};
+int input[4];
+int codelimit = 0;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 
@@ -24,26 +26,37 @@ void setup()
   lcd.print("Locked");
 }
 
-void loop() 
-  {
-  if (irrecv.decode(&results))
+void loop() {
+if (codelimit != 4){
+ if (irrecv.decode(&results))
     {
-     Serial.println(results.value, HEX);
-     irrecv.resume(); // Receive the next value
-     delay(2000);
-   }
-   if (angle == 0){
-    servo.write(90);
-    angle+=90;
-   }
-   if (angle == 90){
-    servo.write(0);
-    angle-=90;
-   }
-   if (angle == 90){
-    lcd.print("Unlocked");
-   }
+     Serial.println(results.value, DEC);
+     lcd.clear();
+     lcd.print(results.value, DEC);
+     input[codelimit] = (results.value, DEC);
+     irrecv.resume();
+    }
+    codelimit++;
+    delay(2000);
+    }
    else{
-    lcd.print("Locked");
+    if (input == lockcode){
+      for(angle = 0; angle < 180; angle++)  
+  {                                  
+    servo.write(angle);               
+    delay(15);                   
+  } 
+      lcd.clear();
+      lcd.print("Unlocked");
+    }
+    else {
+      lcd.setCursor(0,1);
+      lcd.print("Wrong passcode");
+    }
+    codelimit -= 4;
+    for( int i = 0; i < sizeof(input);i++)
+   input[i] = (char)0;
    }
 }
+
+
