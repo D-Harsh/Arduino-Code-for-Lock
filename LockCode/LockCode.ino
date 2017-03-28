@@ -51,6 +51,7 @@ void loop() {
       else if (limit < 3){
         lcd.setCursor(0,1);
         limit++;
+        counter -= 4;
         lcd.print("Wrong Attempt #"+limit);
       }
   }
