@@ -1,3 +1,4 @@
 # Arduino-Code-for-Lock
-The Comp Eng Project we had to hard code
-It's gonna be lit... or locked whichever
+This repository contains 4 arduino files
+The main file for the Lock code is inside the Lock Code folder.
+The three other .ino files are for testing components like Joysticks, LCD Display Modules and Servos to make sure they are functioning correctly.
