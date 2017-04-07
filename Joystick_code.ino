@@ -15,7 +15,7 @@ y= analogRead(VRyPin);//reads the Y-coordinate value
 void setup() {
 pinMode(SwButtonPin, INPUT);//sets the SW switch as input
 digitalWrite(SwButtonPin, HIGH);//sets the SW button HIGH
-Serial.begin(115200);//sets the baud rate
+Serial.begin(9600);//sets the baud rate
 }
 
 void loop() {
