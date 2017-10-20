@@ -1,4 +1,8 @@
 # Arduino-Code-for-Lock
 This repository contains 4 arduino files
-The main file for the Lock code is inside the Lock Code folder.
-The three other .ino files are for testing components like Joysticks, LCD Display Modules and Servos to make sure they are functioning correctly.
+
+* Joystick_code.ino  (Contains code to identify the value outputted by the joystick axis to use to unlock the lock)
+* LCD_Display_Code.ino  (Contains code to test the LCD Display and calibrate the contrast)
+* Servo_Code.ino  (Contains code to test and calibrate the servo)
+* LockCode 
+  * LockCode.ino  (Contains all the necessary code to make the project run)
